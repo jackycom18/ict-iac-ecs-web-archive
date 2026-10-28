@@ -1,0 +1,28 @@
+# Example terraform.tfvars — copy to terraform.tfvars and modify
+# This file is safe to commit to git (no sensitive data)
+
+region_name       = "cn-north-4"
+availability_zone = "cn-north-4a"
+
+vpc_name = "iac-eip-vpc"
+vpc_cidr = "192.168.0.0/16"
+
+subnet_name      = "iac-eip-subnet"
+subnet_cidr      = "192.168.0.0/24"
+subnet_gateway_ip = "192.168.0.1"
+
+security_group_name = "iac-eip-sg"
+allowed_source_ip   = "0.0.0.0/0"  # Change to your IP
+
+ecs_name       = "iac-eip-web"
+ecs_flavor_id  = "s6.small.1"
+ecs_image_name = "Huawei Cloud EulerOS 2.0"
+ecs_password   = ""
+ecs_disk_size  = 40
+ecs_disk_type  = "SSD"
+
+eip_name      = "iac-eip-web-eip"
+eip_bandwidth = 5
+
+nginx_page_title   = "Hello from IaC"
+nginx_page_content = "Nginx deployed by Terraform user_data"
